@@ -4,9 +4,9 @@ type DisplayVariant =
   | "display-large"
   | "display-medium"
   | "display-small";
-type HeadingVariant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+type HeadingVariant = "h1" | "h2" | "h3" | "h4" | "h5";
 type SubHeadingVariant = "sub-h1" | "sub-h2";
-type BodyVariant = "body1" | "body2";
+type BodyVariant = "body" | "body1" | "body2";
 type LinkVariant = "link" | "link-arrow";
 
 export type TypographyVariant =
@@ -16,5 +16,4 @@ export type TypographyVariant =
   | BodyVariant
   | LinkVariant
   | "caption"
-  | "overline"
   | "button";

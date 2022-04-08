@@ -1,22 +1,47 @@
 import React from "react";
-import { TypographyStyle } from "./typography-style";
+import clsx from "clsx";
 import { TypographyVariant } from "./typography-variant";
+import getVariantClassname from "./getVariantClassname";
 
 interface TypographyProps {
-  children: React.FC | string;
+  children?: React.FC | string;
+  className?: string;
   variant: TypographyVariant;
-  style: TypographyStyle;
+  style: "regular" | "semibold" | "italic" | "underline";
+  color: "main" | "primary";
 }
 
+const defaultProps: TypographyProps = {
+  variant: "body",
+  style: "regular",
+  color: "main",
+};
+
 const Typography: React.FC<TypographyProps> = ({
-  // TODO : Implement default values
   children,
+  className,
   variant,
   style,
+  color,
 }) => {
-  // TODO : Implement span with variant and styles
-  // TODO : Create responsive variant && styles
-  return <div>Typography</div>;
+  const variantClassName = getVariantClassname(variant);
+  const TypographyClassName = clsx(
+    variantClassName,
+    {
+      "font-semibold": style === "semibold",
+      italic: style === "italic",
+      underline: style === "underline",
+    },
+    {
+      "text-neutral-100": color === "main",
+      "text-primary-500": color === "primary",
+    },
+    className
+  );
+
+  return <span className={TypographyClassName}>{children}</span>;
 };
+
+Typography.defaultProps = defaultProps;
 
 export default Typography;
