@@ -1,4 +1,3 @@
-
 export interface Channels {
   id: number;
   attributes: {
@@ -6,5 +5,5 @@ export interface Channels {
     logoName: string;
     content: string;
     link: string;
-  }
+  };
 }

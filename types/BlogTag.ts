@@ -1,4 +1,4 @@
-import { Article } from './Article';
+import { Article } from "./Article";
 
 export interface BlogTag {
   id: number;
@@ -7,5 +7,5 @@ export interface BlogTag {
     description: string;
     slug: string;
     articles: { data: Article } | number;
-  }
+  };
 }

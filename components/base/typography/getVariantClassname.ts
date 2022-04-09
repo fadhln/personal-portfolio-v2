@@ -1,7 +1,9 @@
 import { TypographyVariant } from "./typography-variant";
 import clsx from "clsx";
 
-export default function getVariantClassname(variant: TypographyVariant) {
+export default function getVariantClassname(
+  variant: TypographyVariant = "body"
+) {
   const DisplayFont = "font-display";
   const MainFont = "font-main";
 
@@ -92,6 +94,10 @@ export default function getVariantClassname(variant: TypographyVariant) {
     // Button ClassNames
     case "button":
       className = clsx(ButtonClassName, "text-sm md:text-base");
+      break;
+
+    default:
+      className = clsx(BodyClassName, "text-base md:text-lg");
       break;
   }
 

@@ -1,4 +1,3 @@
-
 export interface SecondType {
   id: number;
   attributes: {
@@ -7,5 +6,5 @@ export interface SecondType {
     issuer: string;
     date: string;
     link: string;
-  }
+  };
 }

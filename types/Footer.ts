@@ -1,4 +1,4 @@
-import { Menu } from './components/Menu';
+import { Menu } from "./components/Menu";
 
 export interface Footer {
   id: number;
@@ -6,5 +6,5 @@ export interface Footer {
     subTitle: string;
     copyright: string;
     menu: { data: Menu[] } | number[];
-  }
+  };
 }

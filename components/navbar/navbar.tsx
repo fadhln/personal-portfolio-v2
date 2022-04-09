@@ -9,8 +9,8 @@ const NavBar: React.FC = () => {
       <div className={clsx("h-16", "w-screen")}>
         {NavbarData.map((data) => {
           return (
-            <a>
-              <Typography variant={"body"}>
+            <a key={data.menu}>
+              <Typography variant={"body1"}>
                 <Typography variant={"link"} className={"uppercase"}>
                   {data.menu}
                 </Typography>

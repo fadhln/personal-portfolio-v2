@@ -42,6 +42,10 @@ const Typography: React.FC<TypographyProps> = ({
   return <span className={TypographyClassName}>{children}</span>;
 };
 
-Typography.defaultProps = defaultProps;
+Typography.defaultProps = {
+  variant: "body",
+  style: "regular",
+  color: "main",
+} as Partial<TypographyProps>;
 
 export default Typography;

@@ -1,4 +1,3 @@
-
 export interface FirstResumeType {
   id: number;
   attributes: {
@@ -8,5 +7,5 @@ export interface FirstResumeType {
     duration: string;
     description: string;
     link: string;
-  }
+  };
 }

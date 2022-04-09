@@ -1,5 +1,5 @@
-import { Meta } from './components/Meta';
-import { Channels } from './components/Channels';
+import { Meta } from "./components/Meta";
+import { Channels } from "./components/Channels";
 
 export interface ContactMePage {
   id: number;
@@ -8,5 +8,5 @@ export interface ContactMePage {
     content: string;
     channels: { data: Channels[] } | number[];
     metadata: { data: Meta } | number;
-  }
+  };
 }

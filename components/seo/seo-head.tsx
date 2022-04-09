@@ -12,7 +12,9 @@ const SeoHead: React.FC<{ metadata: Meta }> = ({ metadata }) => {
       {/* Open Graph Meta Tags */}
       <meta
         property="og:image"
-        content={metadata.shareImage.image.data.attributes.formats.thumbnail.url}
+        content={
+          metadata.shareImage.image.data.attributes.formats.thumbnail.url
+        }
         key="ogimage"
       />
       <meta

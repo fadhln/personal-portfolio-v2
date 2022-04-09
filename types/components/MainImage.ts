@@ -1,4 +1,4 @@
-import { Media } from '../Media';
+import { Media } from "../Media";
 
 export interface MainImage {
   id: number;
@@ -6,5 +6,5 @@ export interface MainImage {
     image: { data: Media };
     attribution: string;
     altText: string;
-  }
+  };
 }

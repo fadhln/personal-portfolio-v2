@@ -6,6 +6,6 @@ export interface Payload<T> {
       pageSize: number;
       pageCount: number;
       total: number;
-    }
+    };
   };
 }

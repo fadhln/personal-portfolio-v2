@@ -1,7 +1,7 @@
-import { Meta } from './components/Meta';
-import { Third } from './components/Third';
-import { SecondType } from './components/SecondType';
-import { FirstResumeType } from './components/FirstResumeType';
+import { Meta } from "./components/Meta";
+import { Third } from "./components/Third";
+import { SecondType } from "./components/SecondType";
+import { FirstResumeType } from "./components/FirstResumeType";
 
 export interface ResumePage {
   id: number;
@@ -13,5 +13,5 @@ export interface ResumePage {
     achievementSection: { data: SecondType[] } | number[];
     certificatesSection: { data: Third[] } | number[];
     metadata: { data: Meta[] } | number[];
-  }
+  };
 }

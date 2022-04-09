@@ -1,6 +1,6 @@
-import { Meta } from './components/Meta';
-import { MainImage } from './components/MainImage';
-import { BlogTag } from './BlogTag';
+import { Meta } from "./components/Meta";
+import { MainImage } from "./components/MainImage";
+import { BlogTag } from "./BlogTag";
 
 export interface Article {
   id: number;
@@ -11,5 +11,5 @@ export interface Article {
     content: string;
     slug: string;
     metadata: { data: Meta } | number;
-  }
+  };
 }
