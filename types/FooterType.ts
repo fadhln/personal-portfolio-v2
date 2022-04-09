@@ -1,6 +1,6 @@
 import { Menu } from "./components/Menu";
 
-export interface Footer {
+export interface FooterType {
   id: number;
   attributes: {
     subTitle: string;

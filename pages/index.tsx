@@ -3,21 +3,29 @@ import type { GetStaticProps, GetStaticPropsContext, NextPage } from "next";
 import NavBar from "../components/navbar/navbar";
 import SeoHead from "../components/seo/seo-head";
 import { Homepage } from "../types/Homepage";
-var qs = require("qs");
+
+import qs from "qs";
+import Typography from "../components/base/typography/typography";
+import Footer from "../components/footer/footer";
 
 const Home: NextPage<{ data: Homepage }> = ({ data }) => {
-  if (Boolean(data)) {
+  if (data) {
     return (
       <>
         <SeoHead metadata={data.attributes.metadata} />
-        <div className={"bg-base-900 h-screen w-screen"}>
+        <div className="h-screen min-w-screen">
           <NavBar />
+          <main>
+            <div className="h-screen">
+              <Typography>Content ...</Typography>
+            </div>
+          </main>
+          <Footer />
         </div>
       </>
     );
-  } else {
-    return <></>;
   }
+  return <></>;
 };
 
 export const getStaticProps: GetStaticProps = async (
@@ -37,7 +45,7 @@ export const getStaticProps: GetStaticProps = async (
 
   try {
     const res = await axios.get(`${url}/api/homepage?${query}`);
-    const data = res.data.data;
+    const { data } = res.data;
     return {
       props: {
         data,
