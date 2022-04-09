@@ -10,7 +10,6 @@ const NavBar: React.FC = () => {
         {NavbarData.map((data) => {
           return (
             <a>
-              {/* TODO -> Fix component with children types. Logic is correct. */}
               <Typography variant={"body"}>
                 <Typography variant={"link"} className={"uppercase"}>
                   {data.menu}

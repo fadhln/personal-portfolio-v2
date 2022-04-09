@@ -4,11 +4,11 @@ import { TypographyVariant } from "./typography-variant";
 import getVariantClassname from "./getVariantClassname";
 
 interface TypographyProps {
-  children?: React.FC | string;
+  children?: any;
   className?: string;
-  variant: TypographyVariant;
-  style: "regular" | "semibold" | "italic" | "underline";
-  color: "main" | "primary";
+  variant?: TypographyVariant;
+  style?: "regular" | "semibold" | "italic" | "underline";
+  color?: "main" | "primary";
 }
 
 const defaultProps: TypographyProps = {
