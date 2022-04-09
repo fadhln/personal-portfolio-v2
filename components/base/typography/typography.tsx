@@ -11,12 +11,6 @@ interface TypographyProps {
   color?: "main" | "primary";
 }
 
-const defaultProps: TypographyProps = {
-  variant: "body",
-  style: "regular",
-  color: "main",
-};
-
 const Typography: React.FC<TypographyProps> = ({
   children,
   className,
