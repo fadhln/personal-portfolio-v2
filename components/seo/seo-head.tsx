@@ -8,6 +8,7 @@ const SeoHead: React.FC<{ metadata: Meta }> = ({ metadata }) => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="utf-8" />
       <meta name="description" content={metadata.metaDescription} />
+      <title>{metadata.metaTitle}</title>
 
       {/* Open Graph Meta Tags */}
       <meta

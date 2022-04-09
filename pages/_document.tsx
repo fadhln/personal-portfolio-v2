@@ -10,7 +10,7 @@ export default function Document() {
         />
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-      <body>
+      <body className="bg-base-900">
         <Main />
         <NextScript />
       </body>

@@ -2,20 +2,30 @@ import React from "react";
 import clsx from "clsx";
 import { NavbarData } from "../../data/navbar.data";
 import Typography from "../base/typography/typography";
+import Link from "next/link";
+import MainLogo from "../base/logo/main-logo";
 
 const NavBar: React.FC = () => {
   return (
-    <nav>
-      <div className={clsx("h-16", "w-screen")}>
+    <nav className={"sticky top-0"}>
+      {/* TODO Make navbar transparent when sticked on top */}
+      {/* TODO Make responsive */}
+      <div className={"flex h-20 w-screen px-32 justify-between items-center"}>
         {NavbarData.map((data) => {
           return (
-            <a key={data.menu}>
-              <Typography variant={"body1"}>
-                <Typography variant={"link"} className={"uppercase"}>
-                  {data.menu}
-                </Typography>
-              </Typography>
-            </a>
+            <Link href={data.link} key={data.content}>
+              <a>
+                {data.content.toLowerCase() === "logo" ? (
+                  <MainLogo width={75} />
+                ) : (
+                  <Typography variant={"body1"}>
+                    <Typography variant={"link"} className={"uppercase"}>
+                      {data.content}
+                    </Typography>
+                  </Typography>
+                )}
+              </a>
+            </Link>
           );
         })}
       </div>

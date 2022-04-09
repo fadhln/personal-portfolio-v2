@@ -1,27 +1,27 @@
 export interface NavbarDataType {
-  menu: string;
+  content: string;
   link: string;
 }
 
 export const NavbarData: NavbarDataType[] = [
   {
-    menu: "About",
+    content: "About",
     link: "/about",
   },
   {
-    menu: "Resume",
+    content: "Resume",
     link: "/resume",
   },
   {
-    menu: "Logo",
+    content: "Logo",
     link: "/",
   },
   {
-    menu: "Blog",
+    content: "Blog",
     link: "/blog",
   },
   {
-    menu: "Contact",
-    link: "/contact-me",
+    content: "Contact",
+    link: "/contact",
   },
 ];
