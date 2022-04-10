@@ -1,46 +1,52 @@
-import { GetStaticProps, GetStaticPropsContext, NextPage } from "next";
 import React from "react";
-import qs from "qs";
-import axios from "axios";
-import type { FooterType } from "../../types/FooterType";
-import Typography from "../base/typography/typography";
+import ReactMarkdown from "react-markdown";
 
-// TODO Implement SSR in component
-const Footer: NextPage<{ data: FooterType }> = ({ data }) => {
-  console.log("🚀 ~ file: footer.tsx ~ line 9 ~ data", data);
+import { FooterData } from "../../data/footer.data";
+
+import MainLogo from "../base/logo/main-logo";
+import { customizableComponents } from "../base/typography/typography";
+import Typography from "../base/typography/typography";
+import Link from "next/link";
+
+const Footer: React.FC = () => {
+  // TODO Make Footer Responsive
   return (
     <footer>
-      <div>
-        <Typography>aa{JSON.stringify(data)}</Typography>
+      <div className={"flex w-full h-full px-16 py-16 bg-accent-400"}>
+        <div className="flex-1">
+          <MainLogo color={"#1C211E"} width={125} />
+          <ReactMarkdown
+            components={customizableComponents("dark")}
+            className={"mt-2"}
+          >
+            {FooterData.subtitle}
+          </ReactMarkdown>
+          <ReactMarkdown
+            components={customizableComponents("dark")}
+            className={"mt-16"}
+          >
+            {FooterData.copyright}
+          </ReactMarkdown>
+        </div>
+        <div className={"grid grid-cols-1 py-4 content-between text-right"}>
+          {FooterData.menu.map((menu) => {
+            return (
+              <Link href={menu.link} key={menu.content}>
+                <a>
+                  <Typography Variant="body" Color="dark" Style="underline">
+                    <Typography Variant="link" Color="dark">
+                      {menu.content}
+                    </Typography>
+                  </Typography>
+                </a>
+              </Link>
+            );
+          })}
+        </div>
       </div>
+      <div className="w-full h-3 bg-primary-500" />
     </footer>
   );
-};
-
-export const getStaticProps: GetStaticProps = async (
-  context: GetStaticPropsContext
-) => {
-  const url = process.env.API_URL;
-  const query = qs.stringify({
-    populate: ["*"],
-  });
-
-  try {
-    const res = await axios.get(`${url}/api/footer?${query}`);
-    const { data } = res.data;
-    return {
-      props: {
-        data,
-      },
-    };
-  } catch (error) {
-    console.log(error);
-    return {
-      props: {
-        data: null,
-      },
-    };
-  }
 };
 
 export default Footer;

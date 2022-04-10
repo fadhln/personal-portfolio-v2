@@ -7,22 +7,14 @@ import { Homepage } from "../types/Homepage";
 import qs from "qs";
 import Typography from "../components/base/typography/typography";
 import Footer from "../components/footer/footer";
+import PageContainer from "../components/page-container/page-container";
 
 const Home: NextPage<{ data: Homepage }> = ({ data }) => {
   if (data) {
     return (
-      <>
-        <SeoHead metadata={data.attributes.metadata} />
-        <div className="h-screen min-w-screen">
-          <NavBar />
-          <main>
-            <div className="h-screen">
-              <Typography>Content ...</Typography>
-            </div>
-          </main>
-          <Footer />
-        </div>
-      </>
+      <PageContainer metadata={data.attributes.metadata}>
+        {"lalalala"}
+      </PageContainer>
     );
   }
   return <></>;
