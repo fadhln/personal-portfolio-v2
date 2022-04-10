@@ -2,44 +2,89 @@ import React from "react";
 import clsx from "clsx";
 import { TypographyVariant } from "./typography-variant";
 import getVariantClassname from "./getVariantClassname";
+import { Components } from "react-markdown";
+import Link from "next/link";
 
-interface TypographyProps {
-  children?: any;
+type TypographyColor = "main" | "primary" | "dark";
+type TypographyStyle = "regular" | "semibold" | "italic" | "underline";
+export interface TypographyProps {
   className?: string;
-  variant?: TypographyVariant;
-  style?: "regular" | "semibold" | "italic" | "underline";
-  color?: "main" | "primary";
+  children?: any;
+  Variant?: TypographyVariant;
+  Style?: TypographyStyle;
+  Color?: TypographyColor;
 }
 
-const Typography: React.FC<TypographyProps> = ({
-  children,
-  className,
-  variant,
-  style,
-  color,
-}) => {
-  const variantClassName = getVariantClassname(variant);
+const Typography: React.FC<React.PropsWithChildren<TypographyProps>> = (
+  { className, children, Variant, Style, Color },
+  props
+) => {
+  const variantClassName = getVariantClassname(Variant);
   const TypographyClassName = clsx(
     variantClassName,
     {
-      "font-semibold": style === "semibold",
-      italic: style === "italic",
-      underline: style === "underline",
+      "font-semibold": Style === "semibold",
+      italic: Style === "italic",
+      underline: Style === "underline",
     },
     {
-      "text-neutral-100": color === "main",
-      "text-primary-500": color === "primary",
+      "text-neutral-100": Color === "main",
+      "text-primary-500": Color === "primary",
+      "text-base-900": Color === "dark",
     },
     className
   );
 
-  return <span className={TypographyClassName}>{children}</span>;
+  return (
+    <span className={TypographyClassName} {...props}>
+      {children}
+    </span>
+  );
 };
 
 Typography.defaultProps = {
-  variant: "body",
-  style: "regular",
-  color: "main",
+  Variant: "body",
+  Style: "regular",
+  Color: "main",
 } as Partial<TypographyProps>;
+
+export interface TypogaphyLinkProps {
+  href?: string;
+  Color?: TypographyColor;
+  children: any;
+}
+
+const TypographyLink: React.FC<React.PropsWithChildren<TypogaphyLinkProps>> = (
+  { href = "#", Color = "main", children },
+  props
+) => {
+  return (
+    <Link href={href}>
+      <a>
+        <Typography Color={Color} Variant={"link"} {...props}>
+          {children}
+        </Typography>
+      </a>
+    </Link>
+  );
+};
+
+export const customizableComponents = (
+  color: TypographyColor = "main"
+): Components => {
+  return {
+    p: ({ node, ...props }) => <Typography Color={color} {...props} />,
+    em: ({ node, ...props }) => (
+      <Typography Color={color} Style={"italic"} {...props} />
+    ),
+    strong: ({ node, ...props }) => (
+      <Typography Color={color} Style={"semibold"} {...props} />
+    ),
+    a: ({ node, ...props }) => (
+      <TypographyLink Color={color} href={props.href} {...props} />
+    ),
+    br: ({ node, ...props }) => <br {...props} />,
+  };
+};
 
 export default Typography;

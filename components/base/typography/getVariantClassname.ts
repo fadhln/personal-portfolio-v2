@@ -11,7 +11,7 @@ export default function getVariantClassname(
   const HeadingClassName = clsx(DisplayFont);
   const SubHeadingClassName = clsx(MainFont, "uppercase");
   const BodyClassName = clsx(MainFont);
-  const LinkClassName = clsx("hover:underline");
+  const LinkClassName = clsx("hover:underline cursor-pointer");
   const CaptionClassName = clsx(MainFont);
   const ButtonClassName = clsx(MainFont);
 
