@@ -9,6 +9,7 @@ const NavBar: React.FC = () => {
   let listener: any = null;
   const [scrollState, setScrollState] = React.useState("top");
 
+  /* eslint-disable */
   useEffect(() => {
     listener = document.addEventListener("scroll", (e) => {
       var scrolled = document.scrollingElement!.scrollTop;
@@ -24,36 +25,41 @@ const NavBar: React.FC = () => {
       document.removeEventListener("scroll", listener);
     };
   }, [scrollState]);
+  /* eslint-enable */
 
   return (
-    <nav className={"sticky top-0"}>
+    <nav className={"sticky top-0 z-50"}>
       {/* TODO Make responsive */}
       <div
-        className={clsx(
-          "flex w-full px-32 py-3 justify-between items-center transition-colors",
-          {
-            "bg-transparent": scrollState === "top",
-            "bg-base-900": scrollState === "amir",
-          }
-        )}
-      >
-        {NavbarData.map((data) => {
-          return (
-            <Link href={data.link} key={data.content}>
-              <a>
-                {data.content.toLowerCase() === "logo" ? (
-                  <MainLogo width={75} />
-                ) : (
-                  <Typography Variant={"body1"}>
-                    <Typography Variant={"link"} className={"uppercase"}>
-                      {data.content}
-                    </Typography>
-                  </Typography>
-                )}
-              </a>
-            </Link>
-          );
+        className={clsx(" w-full px-32 py-3 transition-all", {
+          "bg-transparent": scrollState === "top",
+          "bg-base-900 shadow-lg shadow-base-900": scrollState === "amir",
         })}
+      >
+        <div
+          className={clsx(
+            "flex justify-between items-center",
+            "container px-8 mx-auto"
+          )}
+        >
+          {NavbarData.map((data) => {
+            return (
+              <Link href={data.link} key={data.content}>
+                <a>
+                  {data.content.toLowerCase() === "logo" ? (
+                    <MainLogo width={75} />
+                  ) : (
+                    <Typography Variant={"body1"}>
+                      <Typography Variant={"link"} className={"uppercase"}>
+                        {data.content}
+                      </Typography>
+                    </Typography>
+                  )}
+                </a>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </nav>
   );
