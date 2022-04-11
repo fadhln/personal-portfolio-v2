@@ -9,7 +9,10 @@ interface HomeLayoutProps {
 const HomeLayout: React.FC<HomeLayoutProps> = ({ data }) => {
   return (
     <div>
-      <HerosSection />
+      <HerosSection
+        overviewTitle={data.attributes.overviewTitle}
+        overviewContent={data.attributes.overviewContent}
+      />
     </div>
   );
 };
