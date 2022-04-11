@@ -16,11 +16,13 @@ const PageContainer: React.FC<React.PropsWithChildren<PageContainerProps>> = (
   return (
     <>
       <SeoHead metadata={metadata} />
-      <div className="h-screen w-full">
+      <div className="w-full h-screen">
         <NavBar />
         <main>
-          <div className="min-h-screen">
-            <div {...props}>{children}</div>
+          <div className="min-h-screen py-20">
+            <div className="container px-8 mx-auto">
+              <div {...props}>{children}</div>
+            </div>
           </div>
         </main>
         <Footer />

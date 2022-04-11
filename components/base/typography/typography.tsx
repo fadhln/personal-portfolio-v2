@@ -21,6 +21,7 @@ const Typography: React.FC<React.PropsWithChildren<TypographyProps>> = (
 ) => {
   const variantClassName = getVariantClassname(Variant);
   const TypographyClassName = clsx(
+    className,
     variantClassName,
     {
       "font-semibold": Style === "semibold",
@@ -31,8 +32,7 @@ const Typography: React.FC<React.PropsWithChildren<TypographyProps>> = (
       "text-neutral-100": Color === "main",
       "text-primary-500": Color === "primary",
       "text-base-900": Color === "dark",
-    },
-    className
+    }
   );
 
   return (
