@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { TypographyVariant } from "./typography-variant";
 import getVariantClassname from "./getVariantClassname";
 import { Components } from "react-markdown";
+import { RiArrowRightUpLine } from "@react-icons/all-files/ri/RiArrowRightUpLine";
 import Link from "next/link";
 
 type TypographyColor = "main" | "primary" | "dark";
@@ -36,9 +37,16 @@ const Typography: React.FC<React.PropsWithChildren<TypographyProps>> = (
   );
 
   return (
-    <span className={TypographyClassName} {...props}>
-      {children}
-    </span>
+    <>
+      <span className={TypographyClassName} {...props}>
+        {children}{" "}
+        {Variant === "link-arrow" ? (
+          <RiArrowRightUpLine className={"mb-1"} />
+        ) : (
+          ""
+        )}
+      </span>
+    </>
   );
 };
 
