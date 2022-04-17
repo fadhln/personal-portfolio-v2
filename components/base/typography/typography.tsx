@@ -41,7 +41,7 @@ const Typography: React.FC<React.PropsWithChildren<TypographyProps>> = (
       <span className={TypographyClassName} {...props}>
         {children}{" "}
         {Variant === "link-arrow" ? (
-          <RiArrowRightUpLine className={"mb-1"} />
+          <RiArrowRightUpLine className={"align-baseline"} />
         ) : (
           ""
         )}

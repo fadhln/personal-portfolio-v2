@@ -4,7 +4,7 @@ import QuotesIcon from "../components/quotes";
 
 const QuotesSubSection: React.FC = () => {
   return (
-    <div className={"grid justify-items-stretch max-w-[90%] mx-auto"}>
+    <div className={"grid justify-items-stretch max-w-3xl mx-auto"}>
       <div className={"absolute translate-y-3 -translate-x-6"}>
         <QuotesIcon
           variant="opening"
@@ -61,7 +61,7 @@ const HerosSection: React.FC<HerosSectionProps> = ({
   return (
     <div>
       <QuotesSubSection />
-      <div className={"flex mt-12 max-w-[90%] mx-auto"}>
+      <div className={"flex mt-24 max-w-[90%] mx-auto"}>
         <div className={"flex-1"}>
           <h3>
             <Typography Variant={"body1"} Style={"semibold"}>

@@ -83,7 +83,7 @@ export default function getVariantClassname(
       className = clsx(LinkClassName);
       break;
     case "link-arrow":
-      className = clsx(LinkClassName, "inline-flex items-end mr-0.5");
+      className = clsx(LinkClassName, "inline-flex items-center mr-0.5");
       break;
 
     // Caption ClassNames
