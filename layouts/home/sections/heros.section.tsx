@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import Typography from "../../../components/base/typography/typography";
 import QuotesIcon from "../components/quotes";
@@ -77,15 +76,15 @@ const HerosSection: React.FC<HerosSectionProps> = ({
           </p>
         </div>
         <div>
-          <Link href={"/"}>
-            <a>
-              <Typography Variant={"body"}>
-                <Typography Variant={"link-arrow"}>
-                  Joey Reiman (1992)
-                </Typography>
-              </Typography>
-            </a>
-          </Link>
+          <a
+            target="_blank"
+            className="inline-flex align-text-bottom"
+            href={"https://quoteinvestigator.com/2017/03/02/fun/#r+15588+1+5"}
+          >
+            <Typography Variant={"body1"} Style={"underline"}>
+              <Typography Variant={"link-arrow"}>Joey Reiman(1992)</Typography>
+            </Typography>
+          </a>
         </div>
       </div>
     </div>

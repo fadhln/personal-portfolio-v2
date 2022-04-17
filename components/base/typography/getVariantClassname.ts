@@ -69,13 +69,13 @@ export default function getVariantClassname(
 
     // Body ClasNames
     case "body":
-      className = clsx(BodyClassName, "text-base md:text-lg");
+      className = clsx(BodyClassName, "text-sm md:text-base");
       break;
     case "body1":
-      className = clsx(BodyClassName, "text-base md:text-lg");
+      className = clsx(BodyClassName, "text-sm md:text-base");
       break;
     case "body2":
-      className = clsx(BodyClassName, "text-sm md:text-base");
+      className = clsx(BodyClassName, "text-xs md:text-sm");
       break;
 
     // Link ClassNames
@@ -83,7 +83,7 @@ export default function getVariantClassname(
       className = clsx(LinkClassName);
       break;
     case "link-arrow":
-      className = clsx(LinkClassName, "mr-0.5");
+      className = clsx(LinkClassName, "inline-flex items-end mr-0.5");
       break;
 
     // Caption ClassNames
