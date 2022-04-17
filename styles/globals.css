@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-moz-selection {
+  /* Code for Firefox */
+  @apply bg-primary-600 bg-opacity-70 text-neutral-100;
+}
+
+::selection {
+  @apply bg-primary-600 bg-opacity-70 text-neutral-100;
+}
