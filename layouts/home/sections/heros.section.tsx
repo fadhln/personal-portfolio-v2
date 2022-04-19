@@ -1,5 +1,6 @@
 import React from "react";
 import Typography from "../../../components/base/typography/typography";
+import Elipse from "../../../components/svg-decoration/elipse";
 import QuotesIcon from "../components/quotes";
 
 const QuotesSubSection: React.FC = () => {
@@ -60,6 +61,9 @@ const HerosSection: React.FC<HerosSectionProps> = ({
 }) => {
   return (
     <div>
+      <div className={"absolute -top-48 -left-60 z-0"}>
+        <Elipse width={600} />
+      </div>
       <QuotesSubSection />
       <div className={"flex mt-24 max-w-[90%] mx-auto"}>
         <div className={"flex-1"}>
