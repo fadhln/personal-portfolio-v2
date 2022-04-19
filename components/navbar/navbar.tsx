@@ -28,7 +28,7 @@ const NavBar: React.FC = () => {
   /* eslint-enable */
 
   return (
-    <nav className={"sticky top-0 z-50"}>
+    <nav className={"top-0 fixed w-full z-50"}>
       {/* TODO Make responsive */}
       <div
         className={clsx(" w-full px-32 py-3 transition-all", {
