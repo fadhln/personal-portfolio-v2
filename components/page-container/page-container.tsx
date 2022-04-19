@@ -16,7 +16,7 @@ const PageContainer: React.FC<React.PropsWithChildren<PageContainerProps>> = (
   return (
     <>
       <SeoHead metadata={metadata} />
-      <div className="w-full h-screen">
+      <div className="w-full">
         <NavBar />
         <main>
           <div className="min-h-screen py-20">
