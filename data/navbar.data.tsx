@@ -13,7 +13,7 @@ export const NavbarData: NavbarDataType[] = [
     link: "/resume",
   },
   {
-    content: "Logo",
+    content: "Home",
     link: "/",
   },
   {
