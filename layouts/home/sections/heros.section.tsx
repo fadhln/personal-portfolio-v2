@@ -12,7 +12,14 @@ const QuotesSubSection: React.FC = () => {
   const iconWidth = width! > screenSizes.md ? 70 : 50;
 
   return (
-    <div className={"grid justify-items-stretch max-w-md md:max-w-3xl mx-auto"}>
+    <div
+      className={
+        "grid justify-items-stretch max-w-md md:max-w-3xl mx-auto overflow-clip"
+      }
+    >
+      <div className={"absolute -top-40 md:-top-48 -left-40 md:-left-60 z-0"}>
+        <Elipse width={width! > screenSizes.md ? 600 : 400} />
+      </div>
       <div
         className={"absolute translate-y-3 -translate-x-4 md:-translate-x-6"}
       >
@@ -72,12 +79,13 @@ const HerosSection: React.FC<HerosSectionProps> = ({
 }) => {
   return (
     <div>
-      <div className={"absolute -top-48 -left-60 z-0"}>
-        <Elipse width={600} />
-      </div>
       <QuotesSubSection />
-      <div className={"flex mt-24 max-w-[90%] mx-auto"}>
-        <div className={"flex-1"}>
+      <div
+        className={
+          "flex flex-col-reverse md:flex-row md:mt-24 max-w-[90%] mx-auto"
+        }
+      >
+        <div className={"mt-12 md:mt-0 md:flex-1"}>
           <h3>
             <Typography Variant={"body1"} Style={"semibold"}>
               {overviewTitle}
@@ -90,10 +98,9 @@ const HerosSection: React.FC<HerosSectionProps> = ({
             <Typography Variant={"body2"}>{overviewContent}</Typography>
           </p>
         </div>
-        <div>
+        <div className={"text-right"}>
           <a
             target="_blank"
-            className="inline-flex align-text-bottom"
             href={"https://quoteinvestigator.com/2017/03/02/fun/#r+15588+1+5"}
             rel="noreferrer"
           >
