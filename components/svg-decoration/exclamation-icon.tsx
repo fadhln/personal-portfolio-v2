@@ -8,6 +8,7 @@ const ExclamationIcon = () => {
       height="825"
       fill="none"
       viewBox="0 0 183 825"
+      className={"-z-0"}
     >
       <path
         fill="#FF9080"

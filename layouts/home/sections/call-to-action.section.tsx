@@ -40,14 +40,14 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({
 
   return (
     <div className={"container mx-auto overflow-hidden"}>
-      <div className={"relative bg-neutral-100 w-full"}>
-        <div className={"p-16 text-center z-10"}>
-          <h1>
+      <div className={"relative bg-neutral-100 w-full -z-30"}>
+        <div className={"relative px-2 md:px-16 py-16 text-center z-auto"}>
+          <h1 className={"z-20"}>
             <ReactMarkdown components={CTAComponents()}>
               {opportunitiesTitle}
             </ReactMarkdown>
           </h1>
-          <p className={"mt-12 mx-24"}>
+          <p className={"mt-12 md:mx-24"}>
             <Typography Variant={"caption"} Color={"dark"}>
               {opportunitiesContent}
             </Typography>
@@ -57,9 +57,9 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = ({
               Contact Me
             </Button>
           </div>
-        </div>
-        <div className={"absolute -bottom-44 -right-11 z-0"}>
-          <ExclamationIcon />
+          <div className={"absolute -bottom-44 -right-11 -z-20"}>
+            <ExclamationIcon />
+          </div>
         </div>
       </div>
     </div>
