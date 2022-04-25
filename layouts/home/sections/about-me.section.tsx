@@ -8,7 +8,7 @@ interface AboutMeSectionProps {
 
 const AboutMeSection: React.FC<AboutMeSectionProps> = ({ content }) => {
   return (
-    <div className={"flex container mx-auto max-w-[90%]"}>
+    <div className={"flex flex-col md:flex-row container mx-auto max-w-[90%]"}>
       <div className={"flex-1"}>
         <Link href={"/about"}>
           <a>
@@ -18,8 +18,10 @@ const AboutMeSection: React.FC<AboutMeSectionProps> = ({ content }) => {
           </a>
         </Link>
       </div>
-      <p className={"max-w-xl text-right"}>
-        <Typography Variant={"body2"}>{content}</Typography>
+      <p className={"pl-8 md:pl-0 md:max-w-xl text-right mt-8 md:mt-0"}>
+        <Typography Variant={"body2"} className={"max-w-md"}>
+          {content}
+        </Typography>
       </p>
     </div>
   );
