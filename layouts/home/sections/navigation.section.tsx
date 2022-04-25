@@ -2,46 +2,68 @@ import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
 import { MainImage } from "../../../types/components/MainImage";
+import screenSizes from "../../../utils/screenSizes";
+import useWindowSize from "../../../utils/useWindowSize";
 import NavigationCard from "../components/navigation-card";
 
 interface NavigationSectionProps {
   navigationPhoto: MainImage;
 }
 
-// TODO Make responsive
-
 const NavigationSection: React.FC<NavigationSectionProps> = ({
   navigationPhoto,
 }) => {
+  const { width } = useWindowSize();
+
+  const imageSizeMultiplier = width! > screenSizes.md ? 0.6 : 0.3;
   const imageData = navigationPhoto.image.data;
   const imageSrc = imageData.attributes.url;
-  const width = imageData.attributes.width;
-  const height = imageData.attributes.height * 0.75;
+  const imageWidth = imageData.attributes.width * imageSizeMultiplier;
+  const imageHeight = imageData.attributes.height * 0.75 * imageSizeMultiplier;
   const imageAlt = navigationPhoto.altText;
+
+  const navcardWidth = width! > screenSizes.md ? 18 : 0;
+  const navcardHeight = width! > screenSizes.md ? 10 : 0;
+  const navcardVariant = width! > screenSizes.md ? "default" : "transparent";
+  const navcardTitleSize = width! > screenSizes.md ? "default" : "huge";
 
   return (
     <div
       className={"flex relative container mx-auto max-w-[90%] justify-center"}
     >
-      <div className={"max-w-xs"}>
+      <div className={"flex w-full justify-end md:justify-center"}>
         <Image
           src={imageSrc}
           alt={imageAlt}
-          height={height}
-          width={width}
+          height={imageHeight}
+          width={imageWidth}
           objectFit={"cover"}
         />
       </div>
-      <div className={clsx("absolute flex h-full items-center")}>
+      <div
+        className={clsx(
+          "absolute left-0 md:inset-0",
+          "justify-center flex flex-col md:flex-row",
+          "h-full md:items-center"
+        )}
+      >
         <NavigationCard
+          variant={navcardVariant}
+          width={navcardWidth}
+          height={navcardHeight}
+          titleSize={navcardTitleSize}
           data={{
             title: "resume",
             caption: "view my previous work",
             href: "/resume",
           }}
         />
-        <div className={"w-[15rem]"} />
+        <div className={"w-[10rem]"} />
         <NavigationCard
+          variant={navcardVariant}
+          width={navcardWidth}
+          height={navcardHeight}
+          titleSize={navcardTitleSize}
           data={{
             title: "blog",
             caption: "read my latest article",

@@ -9,33 +9,49 @@ interface NavigationCardProps {
     caption: string;
     href: string;
   };
+  height: number;
+  width: number;
+  variant?: "default" | "transparent";
+  titleSize: "default" | "huge";
 }
 
-const NavigationCard: React.FC<NavigationCardProps> = ({ data }) => {
+const NavigationCard: React.FC<NavigationCardProps> = ({
+  data,
+  height,
+  width,
+  variant = "default",
+  titleSize = "default",
+}) => {
   return (
     <div
       className={clsx(
-        "border-2 transition-all group",
-        "border-neutral-100 hover:bg-base-900",
-        "bg-base-900 hover:bg-neutral-100",
+        "transition-all group",
+        {
+          "border-2 border-neutral-100 hover:bg-base-900":
+            variant === "default",
+          "bg-base-900 hover:bg-neutral-100": variant === "default",
+        },
         "hover:-translate-y-1 hover:shadow",
-        "h-[10rem] w-[18rem]"
+        `h-[${height}rem] w-[${width}rem]`
       )}
     >
       <Link href={data.href}>
         <a>
           <div
-            className={
-              "flex flex-col justify-center items-center h-full w-full"
-            }
+            className={clsx("flex flex-col h-full w-full", {
+              "justify-center items-center": variant === "default",
+            })}
           >
             <div className={"p-3"}>
               <div>
-                <Typography Variant={"h2"}>
+                <Typography
+                  Variant={titleSize === "huge" ? "display-small" : "h2"}
+                >
                   <Typography
                     Variant={"link-arrow"}
                     className={clsx(
-                      "text-neutral-100 group-hover:text-base-900",
+                      "text-neutral-100",
+                      { "group-hover:text-base-900": variant === "default" },
                       "font-extrabold"
                     )}
                   >
@@ -46,7 +62,11 @@ const NavigationCard: React.FC<NavigationCardProps> = ({ data }) => {
               <p>
                 <Typography
                   Variant={"caption"}
-                  className={clsx("text-neutral-100 group-hover:text-base-900")}
+                  className={clsx(
+                    "text-neutral-100",
+                    { "group-hover:text-base-900": variant === "default" },
+                    "font-extrabold"
+                  )}
                 >
                   {data.caption}{" "}
                 </Typography>
