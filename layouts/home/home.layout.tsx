@@ -13,17 +13,27 @@ interface HomeLayoutProps {
 const HomeLayout: React.FC<HomeLayoutProps> = ({ data }) => {
   return (
     <div className={"grid grid-cols-1 gap-40 my-20 z-10"}>
-      <HerosSection
-        overviewTitle={data.attributes.overviewTitle}
-        overviewContent={data.attributes.overviewContent}
-      />
-      <AboutMeSection content={data.attributes.aboutmeContent} />
-      <NavigationSection navigationPhoto={data.attributes.navigationPhoto} />
-      <DividerSection />
-      <CallToActionSection
-        opportunitiesTitle={data.attributes.opportunitiesTitle}
-        opportunitiesContent={data.attributes.opportunitiesContent}
-      />
+      <section>
+        <HerosSection
+          overviewTitle={data.attributes.overviewTitle}
+          overviewContent={data.attributes.overviewContent}
+        />
+      </section>
+      <section>
+        <AboutMeSection content={data.attributes.aboutmeContent} />
+      </section>
+      <section>
+        <NavigationSection navigationPhoto={data.attributes.navigationPhoto} />
+      </section>
+      <div className={"hidden md:block"}>
+        <DividerSection />
+      </div>
+      <section>
+        <CallToActionSection
+          opportunitiesTitle={data.attributes.opportunitiesTitle}
+          opportunitiesContent={data.attributes.opportunitiesContent}
+        />
+      </section>
     </div>
   );
 };
