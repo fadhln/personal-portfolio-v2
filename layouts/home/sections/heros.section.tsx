@@ -8,7 +8,11 @@ import QuotesIcon from "../components/quotes";
 const QuotesSubSection: React.FC = () => {
   const { width } = useWindowSize();
   const displaySize =
-    width! > screenSizes.md ? "display-huge" : "display-large";
+    width! > screenSizes.md
+      ? "display-huge"
+      : width! > screenSizes.sm
+      ? "display-large"
+      : "display-medium";
   const iconWidth = width! > screenSizes.md ? 70 : 50;
 
   return (
