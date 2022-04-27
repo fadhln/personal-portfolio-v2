@@ -39,7 +39,7 @@ const Typography: React.FC<React.PropsWithChildren<TypographyProps>> = (
   return (
     <>
       <span className={TypographyClassName} {...props}>
-        {children}{" "}
+        {children}
         {Variant === "link-arrow" ? (
           <RiArrowRightUpLine className={"align-baseline"} />
         ) : (
@@ -81,12 +81,21 @@ export const customizableComponents = (
   color: TypographyColor = "main"
 ): Components => {
   return {
-    p: ({ node, ...props }) => <Typography Color={color} {...props} />,
+    p: ({ node, ...props }) => (
+      <p>
+        <Typography Color={color} Variant={"body2"} {...props} />
+      </p>
+    ),
     em: ({ node, ...props }) => (
-      <Typography Color={color} Style={"italic"} {...props} />
+      <Typography Color={color} Variant={"body2"} Style={"italic"} {...props} />
     ),
     strong: ({ node, ...props }) => (
-      <Typography Color={color} Style={"semibold"} {...props} />
+      <Typography
+        Color={color}
+        Variant={"body2"}
+        Style={"semibold"}
+        {...props}
+      />
     ),
     a: ({ node, ...props }) => (
       <TypographyLink Color={color} href={props.href} {...props} />

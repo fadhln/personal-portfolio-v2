@@ -8,7 +8,7 @@ export interface AboutPage {
     subTitle: string;
     content: string;
     techStack: string;
-    metadata: { data: Meta } | number;
-    image: { data: MainImage } | number;
+    metadata: Meta;
+    image: MainImage;
   };
 }
