@@ -1,5 +1,5 @@
 import React from "react";
-import Typography from "../base/typography/typography";
+import Typography from "components/base/typography/typography";
 
 const DividerSection = () => {
   return (

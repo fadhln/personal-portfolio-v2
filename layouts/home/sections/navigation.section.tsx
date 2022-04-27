@@ -1,10 +1,10 @@
 import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
-import { MainImage } from "../../../types/components/MainImage";
-import screenSizes from "../../../utils/screenSizes";
-import useWindowSize from "../../../utils/useWindowSize";
-import NavigationCard from "../components/navigation-card";
+import { MainImage } from "types/components/MainImage";
+import screenSizes from "utils/screenSizes";
+import useWindowSize from "utils/useWindowSize";
+import NavigationCard from "layouts/home/components/navigation-card";
 
 interface NavigationSectionProps {
   navigationPhoto: MainImage;

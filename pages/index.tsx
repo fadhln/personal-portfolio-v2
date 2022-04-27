@@ -1,10 +1,10 @@
 import axios from "axios";
 import type { GetStaticProps, GetStaticPropsContext, NextPage } from "next";
-import { Homepage } from "../types/Homepage";
+import { Homepage } from "types/Homepage";
 
 import qs from "qs";
-import PageContainer from "../components/page-container/page-container";
-import HomeLayout from "../layouts/home/home.layout";
+import PageContainer from "components/page-container/page-container";
+import HomeLayout from "layouts/home/home.layout";
 
 const Home: NextPage<{ data: Homepage }> = ({ data }) => {
   if (data) {

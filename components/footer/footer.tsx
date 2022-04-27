@@ -1,11 +1,11 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 
-import { FooterData } from "../../data/footer.data";
+import { FooterData } from "data/footer.data";
 
-import MainLogo from "../base/logo/main-logo";
-import { customizableComponents } from "../base/typography/typography";
-import Typography from "../base/typography/typography";
+import MainLogo from "components/base/logo/main-logo";
+import { customizableComponents } from "components/base/typography/typography";
+import Typography from "components/base/typography/typography";
 import Link from "next/link";
 
 const Footer: React.FC = () => {

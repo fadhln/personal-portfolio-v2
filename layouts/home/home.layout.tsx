@@ -1,6 +1,6 @@
 import React from "react";
-import DividerSection from "../../components/section/divider-section";
-import type { Homepage } from "../../types/Homepage";
+import DividerSection from "components/section/divider-section";
+import type { Homepage } from "types/Homepage";
 import AboutMeSection from "./sections/about-me.section";
 import CallToActionSection from "./sections/call-to-action.section";
 import HerosSection from "./sections/heros.section";

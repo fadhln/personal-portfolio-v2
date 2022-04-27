@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import React from "react";
-import Typography from "../typography/typography";
+import Typography from "components/base/typography/typography";
 
 interface ButtonProps
   extends React.DetailedHTMLProps<

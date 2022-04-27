@@ -1,9 +1,9 @@
 import React from "react";
-import Typography from "../../../components/base/typography/typography";
-import Elipse from "../../../components/svg-decoration/elipse";
-import screenSizes from "../../../utils/screenSizes";
-import useWindowSize from "../../../utils/useWindowSize";
-import QuotesIcon from "../components/quotes";
+import Typography from "components/base/typography/typography";
+import Elipse from "components/svg-decoration/elipse";
+import screenSizes from "utils/screenSizes";
+import useWindowSize from "utils/useWindowSize";
+import QuotesIcon from "layouts/home/components/quotes";
 
 const QuotesSubSection: React.FC = () => {
   const { width } = useWindowSize();

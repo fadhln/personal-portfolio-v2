@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import { Meta } from "../../types/components/Meta";
+import { Meta } from "types/components/Meta";
 
 const SeoHead: React.FC<{ metadata: Meta }> = ({ metadata }) => {
   return (

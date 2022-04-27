@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import Link from "next/link";
 import React, { useState } from "react";
-import { NavbarData } from "../../data/navbar.data";
-import Typography from "../base/typography/typography";
+import { NavbarData } from "data/navbar.data";
+import Typography from "components/base/typography/typography";
 
 const MobileSidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

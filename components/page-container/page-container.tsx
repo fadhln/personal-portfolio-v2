@@ -1,8 +1,8 @@
 import React from "react";
-import type { Meta } from "../../types/components/Meta";
-import Footer from "../footer/footer";
-import NavBar from "../navbar/navbar";
-import SeoHead from "../seo/seo-head";
+import type { Meta } from "types/components/Meta";
+import Footer from "components/footer/footer";
+import NavBar from "components/navbar/navbar";
+import SeoHead from "components/seo/seo-head";
 
 interface PageContainerProps {
   children: any;

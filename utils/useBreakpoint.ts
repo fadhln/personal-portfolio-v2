@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import { theme } from "../tailwind.config";
+import { theme } from "tailwind.config";
 
 const breakpoints = theme.screens;
 type BreakpointKey = keyof typeof breakpoints;

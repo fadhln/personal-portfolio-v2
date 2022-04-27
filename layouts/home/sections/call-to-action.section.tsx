@@ -1,10 +1,9 @@
 import { useRouter } from "next/router";
 import React from "react";
 import ReactMarkdown, { Components } from "react-markdown";
-import Button from "../../../components/base/button/button";
-import Typography from "../../../components/base/typography/typography";
-import Elipse from "../../../components/svg-decoration/elipse";
-import ExclamationIcon from "../../../components/svg-decoration/exclamation-icon";
+import Button from "components/base/button/button";
+import Typography from "components/base/typography/typography";
+import ExclamationIcon from "components/svg-decoration/exclamation-icon";
 
 const CTAComponents = (): Components => {
   return {

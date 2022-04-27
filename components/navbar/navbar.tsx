@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import clsx from "clsx";
-import { NavbarData } from "../../data/navbar.data";
-import Typography from "../base/typography/typography";
+import { NavbarData } from "data/navbar.data";
+import Typography from "components/base/typography/typography";
 import Link from "next/link";
-import MainLogo from "../base/logo/main-logo";
+import MainLogo from "components/base/logo/main-logo";
 import MobileSidebar from "./mobile-sidebar";
 
 const NavBar: React.FC = () => {

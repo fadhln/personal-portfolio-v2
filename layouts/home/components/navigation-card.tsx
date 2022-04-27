@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
-import Typography from "../../../components/base/typography/typography";
+import Typography from "components/base/typography/typography";
 
 interface NavigationCardProps {
   data: {
