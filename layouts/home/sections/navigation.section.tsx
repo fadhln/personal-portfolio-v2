@@ -22,8 +22,6 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
   const imageHeight = imageData.attributes.height * 0.75 * imageSizeMultiplier;
   const imageAlt = navigationPhoto.altText;
 
-  const navcardWidth = width! > screenSizes.md ? 18 : 0;
-  const navcardHeight = width! > screenSizes.md ? 10 : 0;
   const navcardVariant = width! > screenSizes.md ? "default" : "transparent";
   const navcardTitleSize = width! > screenSizes.md ? "default" : "huge";
 
@@ -49,9 +47,8 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
       >
         <NavigationCard
           variant={navcardVariant}
-          width={navcardWidth}
-          height={navcardHeight}
           titleSize={navcardTitleSize}
+          responsive
           data={{
             title: "resume",
             caption: "view my previous work",
@@ -61,9 +58,8 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
         <div className={"w-[10rem]"} />
         <NavigationCard
           variant={navcardVariant}
-          width={navcardWidth}
-          height={navcardHeight}
           titleSize={navcardTitleSize}
+          responsive
           data={{
             title: "blog",
             caption: "read my latest article",

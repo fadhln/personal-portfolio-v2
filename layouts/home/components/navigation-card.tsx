@@ -9,16 +9,14 @@ interface NavigationCardProps {
     caption: string;
     href: string;
   };
-  height: number;
-  width: number;
+  responsive?: boolean;
   variant?: "default" | "transparent";
   titleSize: "default" | "huge";
 }
 
 const NavigationCard: React.FC<NavigationCardProps> = ({
   data,
-  height,
-  width,
+  responsive,
   variant = "default",
   titleSize = "default",
 }) => {
@@ -32,7 +30,9 @@ const NavigationCard: React.FC<NavigationCardProps> = ({
           "bg-base-900 hover:bg-neutral-100": variant === "default",
         },
         "hover:-translate-y-1 hover:shadow",
-        `h-[${height}rem] w-[${width}rem]`
+        {
+          "md:w-[18rem] md:h-[10rem]": responsive,
+        }
       )}
     >
       <Link href={data.href}>
