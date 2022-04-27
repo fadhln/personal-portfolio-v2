@@ -30,7 +30,6 @@ const NavBar: React.FC = () => {
 
   return (
     <nav className={"top-0 fixed w-full z-50"}>
-      {/* TODO Make responsive */}
       <div
         className={clsx(" w-full px-3 md:px-32 py-3 transition-all", {
           "bg-transparent": scrollState === "top",
@@ -38,7 +37,11 @@ const NavBar: React.FC = () => {
         })}
       >
         <div className={clsx("flex md:hidden justify-between")}>
-          <MainLogo width={65} />
+          <Link href={"/"}>
+            <a>
+              <MainLogo width={65} />
+            </a>
+          </Link>
           <MobileSidebar />
         </div>
         <div
