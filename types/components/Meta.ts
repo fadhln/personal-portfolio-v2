@@ -1,9 +1,9 @@
 import { ShareImage } from "./ShareImage";
 
 export interface Meta {
-  id: number;
+  id?: number;
   metaTitle: string;
-  metaDescription: string;
-  shareImage: ShareImage;
-  keywords: string;
+  metaDescription?: string;
+  shareImage?: ShareImage;
+  keywords?: string;
 }

@@ -7,28 +7,34 @@ const SeoHead: React.FC<{ metadata: Meta }> = ({ metadata }) => {
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="utf-8" />
-      <meta name="description" content={metadata.metaDescription} />
+      {metadata.metaDescription && (
+        <meta name="description" content={metadata.metaDescription} />
+      )}
       <title>{metadata.metaTitle}</title>
 
       {/* Open Graph Meta Tags */}
-      <meta
-        property="og:image"
-        content={
-          metadata.shareImage.image.data.attributes.formats.thumbnail.url
-        }
-        key="ogimage"
-      />
+      {metadata.shareImage && (
+        <meta
+          property="og:image"
+          content={metadata.shareImage.image.data.attributes.formats.small.url}
+          key="ogimage"
+        />
+      )}
       <meta
         property="og:site_name"
         content={"Muhammad Fadhlan Portfolio"}
         key="ogsitename"
       />
-      <meta property="og:title" content={metadata.metaTitle} key="ogtitle" />
-      <meta
-        property="og:description"
-        content={metadata.metaDescription}
-        key="ogdesc"
-      />
+      {metadata.metaTitle && (
+        <meta property="og:title" content={metadata.metaTitle} key="ogtitle" />
+      )}
+      {metadata.metaDescription && (
+        <meta
+          property="og:description"
+          content={metadata.metaDescription}
+          key="ogdesc"
+        />
+      )}
 
       {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary" />
