@@ -32,11 +32,7 @@ const MainSection: React.FC<MainSectionProps> = ({
 
   return (
     <div>
-      <div
-        className={
-          "flex justify-between mx-auto w-full md:mt-24 md:max-w-[90%]"
-        }
-      >
+      <div className={"flex justify-between mx-auto w-full md:max-w-[90%]"}>
         <div className={"md:pr-8"}>
           <p>
             <Typography Variant={"body2"} Style={"italic"}>
