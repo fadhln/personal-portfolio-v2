@@ -17,7 +17,6 @@ const About: NextPage<{ data: AboutPage }> = ({ data }) => {
   return <></>;
 };
 
-// TODO: Add revalidate (and homepage too)
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
 ) => {
@@ -47,6 +46,8 @@ export const getStaticProps: GetStaticProps = async (
       props: {
         data: null,
       },
+      // Revalidate once every day
+      revalidate: 60 * 24,
     };
   }
 };

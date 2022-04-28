@@ -41,11 +41,14 @@ export const getStaticProps: GetStaticProps = async (
       },
     };
   } catch (error) {
+    // Implement route to 500 (production)
     console.log(error);
     return {
       props: {
         data: null,
       },
+      // Revalidate once every day
+      revalidate: 60 * 24,
     };
   }
 };
