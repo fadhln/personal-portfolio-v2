@@ -18,7 +18,11 @@ const Footer: React.FC = () => {
       >
         <div className="flex">
           <div className="flex-1">
-            <MainLogo color={"#1C211E"} width={125} />
+            <Link href={"/"}>
+              <a>
+                <MainLogo color={"#1C211E"} width={125} />
+              </a>
+            </Link>
             <ReactMarkdown
               components={customizableComponents("dark")}
               className={"mt-2"}
