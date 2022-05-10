@@ -11,6 +11,8 @@ interface ResumeProps {
   data: ResumePage;
 }
 
+// TODO: Make Responsive
+
 const Resume: NextPage<ResumeProps> = ({ data }) => {
   if (data) {
     return (

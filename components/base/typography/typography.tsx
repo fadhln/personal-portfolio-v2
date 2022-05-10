@@ -97,6 +97,29 @@ export const customizableComponents = (
         {...props}
       />
     ),
+    li: ({ index, ordered, className, ...props }) => {
+      const ordered_bool = ordered ? 1 : 0;
+      return (
+        <li className={"flex justify-between"}>
+          {ordered_bool ? (
+            <Typography Color={color} Variant={"body2"}>
+              {index}
+            </Typography>
+          ) : (
+            <Typography Color={color} Variant={"body2"}>{`• `}</Typography>
+          )}
+          <Typography
+            Color={color}
+            Variant={"body2"}
+            className={clsx(className, "leading-3 w-[98%]")}
+            {...props}
+          />
+        </li>
+      );
+    },
+    ul: ({ className, ...props }) => (
+      <ul className={clsx(className, "flex flex-col gap-1")} {...props} />
+    ),
     a: ({ node, ...props }) => (
       <TypographyLink Color={color} href={props.href} {...props} />
     ),
