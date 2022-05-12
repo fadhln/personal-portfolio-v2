@@ -3,19 +3,19 @@ import React from "react";
 
 import qs from "qs";
 import axios from "axios";
-import { ResumePage } from "types/ResumePage";
+import { ContactMePage } from "types/ContactMePage";
 import PageContainer from "components/page-container/page-container";
-import ResumeLayout from "layouts/resume/resume.layout";
+import ContactLayout from "layouts/contact/contact.layout";
 
-interface ResumeProps {
-  data: ResumePage;
+interface ContactProps {
+  data: ContactMePage;
 }
 
-const Resume: NextPage<ResumeProps> = ({ data }) => {
+const Contact: NextPage<ContactProps> = ({ data }) => {
   if (data) {
     return (
-      <PageContainer metadata={data.attributes.metadata[0]}>
-        <ResumeLayout data={data} />
+      <PageContainer metadata={data.attributes.metadata}>
+        <ContactLayout data={data} />
       </PageContainer>
     );
   }
@@ -29,24 +29,22 @@ export const getStaticProps: GetStaticProps = async (
   const query = qs.stringify({
     populate: [
       "*",
-      "academicSection",
-      "proffesionalSection",
-      "activitiesSection",
-      "achievementSection",
-      "certificatesSection",
       "metadata",
       "metadata.shareImage",
       "metadata.shareImage.image",
+      "channels",
     ],
   });
 
   try {
-    const res = await axios.get(`${url}/api/resume-page?${query}`);
+    const res = await axios.get(`${url}/api/contact-me-page?${query}`);
     const { data } = res.data;
     return {
       props: {
         data,
       },
+      // Revalidate once every day
+      revalidate: 60 * 24,
     };
   } catch (error) {
     console.log(error);
@@ -54,10 +52,9 @@ export const getStaticProps: GetStaticProps = async (
       props: {
         data: null,
       },
-      // Revalidate once every day
-      revalidate: 60 * 24,
+      revalidate: 30,
     };
   }
 };
 
-export default Resume;
+export default Contact;

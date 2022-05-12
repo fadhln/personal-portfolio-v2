@@ -6,7 +6,7 @@ export interface ContactMePage {
   attributes: {
     mainTitle: string;
     content: string;
-    channels: { data: Channels[] } | number[];
-    metadata: { data: Meta } | number;
+    channels: Channels[];
+    metadata: Meta;
   };
 }
