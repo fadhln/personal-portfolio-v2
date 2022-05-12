@@ -39,6 +39,8 @@ export const getStaticProps: GetStaticProps = async (
       props: {
         data,
       },
+      // Revalidate once every day
+      revalidate: 60 * 24,
     };
   } catch (error) {
     console.log(error);
@@ -46,8 +48,7 @@ export const getStaticProps: GetStaticProps = async (
       props: {
         data: null,
       },
-      // Revalidate once every day
-      revalidate: 60 * 24,
+      revalidate: 30,
     };
   }
 };
